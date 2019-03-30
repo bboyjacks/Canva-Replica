@@ -1,0 +1,21 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.app {
+	height: 100vh;
+	display: flex;
+}
+
+.side-panel {
+	flex: 1;
+	background: lightblue;
+	min-width: 300px;
+}
+
+.main-panel {
+	flex: 2;
+	background: lightcoral;
+}
