@@ -65,12 +65,31 @@ class SidePanelOptionSelectorManager {
   }
 }
 
+let loadImagesToGallery = () => {
+  let gallery = document.querySelector(".gallery-option > ul");
+
+  for (let i = 0; i < 10; i++) {
+    fetch("https://picsum.photos/200/300/?random")
+      .then(response => {
+        let newLi = document.createElement("li");
+        let newImg = document.createElement("img");
+        newImg.setAttribute("src", `${response.url}`);
+        newLi.appendChild(newImg);
+        gallery.appendChild(newLi);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+};
+
 let sidePanelOptionSelectorManager = new SidePanelOptionSelectorManager();
 let sidePanelContentManager = new SidePanelContentManager(0);
 window.onload = () => {
   app();
   sidePanelOptionSelectorManager.highlight(0);
   sidePanelContentManager.showContentOnIndex(0);
+  loadImagesToGallery();
 };
 
 window.onresize = () => {
