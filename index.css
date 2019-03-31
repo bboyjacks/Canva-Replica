@@ -1,64 +1,77 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .app {
-	height: 100vh;
-	display: flex;
+  height: 100vh;
+  display: flex;
 }
 
 .side-panel {
-	flex: 1;
-	background: rgb(55, 61, 72);
-	min-width: 300px;
-	display: flex;
+  flex: 1;
+  background: rgb(55, 61, 72);
+  min-width: 300px;
+  display: flex;
 }
 
 .side-panel-options {
-	position: relative;
-	flex: 1;
+  position: relative;
+  flex: 1;
 }
 
 .side-panel-option {
-	position: relative;
-	width: 100%;
-	padding-top: 100%;
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
 }
 
 .side-panel-option i,
 .side-panel-option p {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	color: white;
-	pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  pointer-events: none;
+}
+
+@media only screen and (max-width: 1660px) {
+  .side-panel-option i,
+  .side-panel-option p {
+    transform: scale(0.8) translate(-50%, -50%);
+  }
+}
+
+@media only screen and (max-width: 1270px) {
+  .side-panel-option p {
+    display: none;
+  }
 }
 
 .side-panel-option p {
-	top: 70%;
-	font-family: Arial, Helvetica, sans-serif;
+  top: 70%;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .side-panel-option-selector {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	padding-top: 100%;
-	opacity: 0.2;
-	background: lightcoral;
-	transition: top 0.5s ease;
-	pointer-events: none;	
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 100%;
+  opacity: 0.2;
+  background: lightcoral;
+  transition: top 0.5s ease;
+  pointer-events: none;
 }
 
 .side-panel-option-content {
-	flex: 4;
+  flex: 4;
 }
 
 .main-panel {
-	flex: 2;
-	background: lightcoral;
+  flex: 2;
+  background: lightcoral;
 }

@@ -1,47 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Lester Dela Cruz" />
+    <meta
+      name="description"
+      content="This app is an attempt to replicate Canva button"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="author" content="Lester Dela Cruz">
-	<meta name="description" content="This app is an attempt to replicate Canva button">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas App Version 3</title>
 
-	<title>Canvas App Version 3</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
 
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-	 crossorigin="anonymous">
-	<link rel="stylesheet" href="./index.css">
-</head>
+  <body>
+    <div class="app">
+      <div class="side-panel">
+        <div class="side-panel-options">
+          <div class="side-panel-option-selector"></div>
+          <div class="side-panel-option" index="0">
+            <i class="far fa-images fa-2x"></i>
+            <p>Gallery</p>
+          </div>
+          <div class="side-panel-option" index="1">
+            <i class="fas fa-font fa-2x"></i>
+            <p>Text</p>
+          </div>
+          <div class="side-panel-option" index="2">
+            <i class="far fa-arrow-alt-circle-up fa-2x"></i>
+            <p>Upload</p>
+          </div>
+        </div>
+        <div class="side-panel-option-content"></div>
+      </div>
+      <div class="main-panel">
+        <p>Main Panel</p>
+      </div>
+    </div>
 
-<body>
-
-	<div class="app">
-		<div class="side-panel">
-			<div class="side-panel-options">
-				<div class="side-panel-option-selector"></div>
-				<div class="side-panel-option" index="0">
-					<i class="far fa-images fa-2x"></i>
-					<p>Gallery</p>
-				</div>
-				<div class="side-panel-option" index="1">
-					<i class="fas fa-font fa-2x"></i>
-					<p>Text</p>
-				</div>
-				<div class="side-panel-option" index="2">
-					<i class="far fa-arrow-alt-circle-up fa-2x"></i>
-					<p>Upload</p>
-				</div>
-			</div>
-			<div class="side-panel-option-content"></div>
-		</div>
-		<div class="main-panel">
-			<p>Main Panel</p>
-		</div>
-	</div>
-
-	<script src="./index.js"></script>
-</body>
-
+    <script src="./index.js"></script>
+  </body>
 </html>
