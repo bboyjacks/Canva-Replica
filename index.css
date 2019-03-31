@@ -60,11 +60,46 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding-top: 100%;
-  opacity: 0.2;
-  background: lightcoral;
-  transition: top 0.5s ease;
+  height: 100%;
+  opacity: 0.5;
   pointer-events: none;
+}
+
+.side-panel-option-selector-manager {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.side-panel-option-selector-manager div:nth-child(2) {
+  position: absolute;
+  padding-top: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transition: top 0.5s ease;
+}
+
+.side-panel-option-selector-manager div:nth-child(1),
+.side-panel-option-selector-manager div:nth-child(3) {
+  position: absolute;
+  background: lightcoral;
+  height: 100px;
+  width: 100%;
+  left: 0;
+  transition: height 0.5s ease;
+}
+
+.side-panel-option-selector-manager div:nth-child(1) {
+  border-bottom-right-radius: 5px;
+  top: 0;
+}
+
+.side-panel-option-selector-manager div:nth-child(3) {
+  border-top-right-radius: 5px;
+  bottom: 0;
 }
 
 .side-panel-option-content {
