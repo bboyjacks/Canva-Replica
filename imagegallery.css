@@ -11,6 +11,10 @@ li {
   cursor: pointer;
 }
 
+li img {
+  box-shadow: 2px 2px 3px black;
+}
+
 li:hover {
   transform: rotate(5deg);
 }
