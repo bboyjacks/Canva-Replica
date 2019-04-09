@@ -67,6 +67,9 @@ class SidePanelOptionSelectorManager {
 
 let loadImagesToGallery = () => {
   let gallery = document.querySelector(".gallery-option > ul");
+  let mainPanelManager = new MainPanelManager();
+  let imgWorker = new ImgWorker();
+  mainPanelManager.addWorker(imgWorker);
 
   for (let i = 0; i < 10; i++) {
     fetch("https://picsum.photos/200/300/?random")
@@ -76,12 +79,58 @@ let loadImagesToGallery = () => {
         newImg.setAttribute("src", `${response.url}`);
         newLi.appendChild(newImg);
         gallery.appendChild(newLi);
+
+        newImg.addEventListener("click", function() {
+          let data = {
+            url: this.getAttribute("src")
+          };
+
+          mainPanelManager.notify(data);
+        });
       })
       .catch(error => {
         console.log(error);
       });
   }
 };
+
+class MainPanelManager {
+  constructor() {
+    this.workers = [];
+    this.notify = this.notify.bind(this);
+  }
+
+  addWorker(worker) {
+    this.workers.push(worker);
+  }
+
+  notify(data) {
+    this.workers.forEach(worker => {
+      worker.notify(data);
+    });
+  }
+}
+
+class WorkerBase {
+  constructor() {
+    this.notify = this.notify.bind(this);
+  }
+
+  notify(data) {}
+}
+
+class ImgWorker extends WorkerBase {
+  constructor() {
+    super();
+  }
+
+  notify(data) {
+    let newImg = document.createElement("img");
+    newImg.setAttribute("src", imgUrl);
+    let page = document.querySelector(".page");
+    page.innerHTML = newImg;
+  }
+}
 
 let sidePanelOptionSelectorManager = new SidePanelOptionSelectorManager();
 let sidePanelContentManager = new SidePanelContentManager(0);
